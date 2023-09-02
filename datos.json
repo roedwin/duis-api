@@ -1,0 +1,60 @@
+{"datos":[
+    {
+      "id": "ebb21a70-0d22-4988-aab2-48a5d42dac1t",
+      "dui": "12345678-9",
+      "nombre": "Juan Pérez",
+      "departamento": "San Salvador",
+      "municipio": "San Salvador",
+      "centro_de_votacion": "Colegio Centroamérica",
+      "direccion": "Avenida Independencia, San Salvador",
+      "jrv": "12345",
+      "correlativo": "6789"
+    },
+    {
+      "id": "ecc9b62f-8fa0-4c5e-9f2c-36b9d9d1ac53",
+      "dui": "98765432-1",
+      "nombre": "María García",
+      "departamento": "La Libertad",
+      "municipio": "Santa Tecla",
+      "centro_de_votacion": "Instituto Nacional",
+      "direccion": "Calle El Progreso, Santa Tecla",
+      "jrv": "54321",
+      "correlativo": "1234"
+    },
+    {
+      "id": "67d2353a-78ab-4bc3-b5c1-ee8cfc77d2f7",
+      "dui": "56789012-3",
+      "nombre": "Luis Rodríguez",
+      "departamento": "San Miguel",
+      "municipio": "San Miguel",
+      "centro_de_votacion": "Complejo Educativo San Miguel",
+      "direccion": "Avenida Roosevelt, San Miguel",
+      "jrv": "67890",
+      "correlativo": "2345"
+    },
+    {
+      "id": "f4cc63b1-6131-4c02-9267-6edecbda3a42",
+      "dui": "34567890-1",
+      "nombre": "Ana López",
+      "departamento": "Santa Ana",
+      "municipio": "Santa Ana",
+      "centro_de_votacion": "Colegio San José",
+      "direccion": "Calle Poniente, Santa Ana",
+      "jrv": "45678",
+      "correlativo": "3456"
+    },
+    {
+      "id": "c5e49e1c-26e6-4bbf-a3f9-3523cc53284d",
+      "dui": "90123456-7",
+      "nombre": "Pedro Hernández",
+      "departamento": "La Paz",
+      "municipio": "Zacatecoluca",
+      "centro_de_votacion": "Colegio La Paz",
+      "direccion": "Calle El Carmen, Zacatecoluca",
+      "jrv": "23456",
+      "correlativo": "4567"
+    }
+  ]
+  
+}
+  

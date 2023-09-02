@@ -1,21 +1,48 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Text, Optional
 from datetime import datetime
 from uuid import uuid4 as uuid
 
-app = FastAPI()
+import json
 
-posts = []
+
+app = FastAPI()
 
 class Post(BaseModel):
     id: Optional[str]
-    title: str
-    author: str
-    content: Text
-    created_at: datetime = datetime.now()
-    published_at: Optional[datetime]
-    published: bool = False
+    dui: str
+    nombre: str
+    departamento: str
+    municipio: str
+    centro_de_votacion: str
+    direccion: str
+    jrv: str
+    correlativo: str
+
+# Leer el JSON desde un archivo
+with open('datos.json') as file:
+    data = json.load(file)
+
+# Acceder a los datos
+datos = data['datos']
+
+posts = []
+for registro in datos:
+    post = Post(
+        id=registro['id'],
+        dui=registro['dui'],
+        nombre=registro['nombre'],
+        departamento=registro['departamento'],
+        municipio=registro['municipio'],
+        centro_de_votacion=registro['centro_de_votacion'],
+        direccion=registro['direccion'],
+        jrv=registro['jrv'],
+        correlativo=registro['correlativo']
+    )
+    posts.append(post)
+
+
 
 @app.get('/')
 def read_root():
@@ -31,12 +58,20 @@ def save_post(post: Post):
     posts.append(post.dict())
     return posts[-1]
 
-@app.get("/posts/{post_id}")
-def get_post(post_id: str):
+@app.get('/posts/{id}')
+def get_post(id: str):
     for post in posts:
-        if post["id"] == post_id:
+        if post.id == id:
             return post
-    raise HTTPException(status_code=404, detail="Post Not found")
+    raise HTTPException(status_code=404, detail="Post not found")
+
+# Ruta para obtener un post por DUI
+@app.get('/posts/dui/{dui}', response_model=Post)
+def read_post_by_dui(dui: str):
+    for post in posts:
+        if post.dui == dui:
+            return post
+    raise HTTPException(status_code=404, detail="Post not found")
 
 @app.delete("/posts/{post_id}")
 def delete_post(post_id: str):
